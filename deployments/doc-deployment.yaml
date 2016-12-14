@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: doc-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: doc
+    spec:
+      containers:
+      - name: hello-node
+        image: gcr.io/my-kubernetes-codelab-152306/hello-node:v3
+        ports:
+        - containerPort: 8080
+      - name: doc-mysql
+        image: gcr.io/my-kubernetes-codelab-152306/doc-mysql:v1
+        ports:
+        - containerPort: 3306
+

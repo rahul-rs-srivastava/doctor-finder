@@ -1,0 +1,5 @@
+FROM node:4.4
+EXPOSE 8080
+COPY server.js SearchDoctor.html DoctorResult.html doc.jpg star.jpg package.json ./
+COPY node_modules ./
+CMD node server.js

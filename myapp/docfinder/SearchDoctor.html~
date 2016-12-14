@@ -1,0 +1,25 @@
+<html>
+    <body>
+    <table>
+        <tr valign="bottom" style="vertical-align: bottom">
+            <td><img src="img/doc.jpg" height="40" width="60"></td>
+            <td style="vertical-align: middle; font-size:40px;">Doctor Finder</td>
+        </tr>
+    </table>
+    <br/>
+      <form action="" method="post">
+         <fieldset>
+            <label for="locality">Locality:</label>
+            <input type="text" id="locality" name="locality" placeholder="Enter locality or zipcode" />
+            <label for="speciality">Speciality:</label>
+            <input type="speciality" id="speciality" name="speciality" placeholder="Enter speciality. e.g. internal medicine, ent, etc." />
+            <input type="submit" value="Search Doctor" /> <br/>
+            <input type="submit" value="Manage Reports" />
+         </fieldset>
+      </form>
+<br/>
+<p style="font-size:15px;">Search doctors in your locality. See user ratings and reviews. Book appointment online.<br/>
+Get reminder for your doctor's appointment on your mobile, so you will never miss your appointments.<br/>
+Manage all your prescriptions and diagnostic reports in one place.</p>
+   </body>
+</html>

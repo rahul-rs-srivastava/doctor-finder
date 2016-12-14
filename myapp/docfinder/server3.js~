@@ -1,0 +1,38 @@
+var http = require('http');
+var fs = require('fs')
+
+var handleRequest = function(request, response) {
+    console.log('Received request for URL: ' + request.url);
+    if (request.method.toLowerCase() == 'get') {
+        displayForm(response);
+    } else if (request.method.toLowerCase() == 'post') {
+        processAllFieldsOfTheForm(request, response);
+    }
+};
+
+function displayForm(response) {
+  console.log('Rendering Search Doctor Form...');
+  fs.readFile('SearchDoctor.html', 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    response.writeHead(200);
+    response.end(data);
+    console.log('[Done] Rendering Search Doctor Form.');
+  });
+}
+
+function processAllFieldsOfTheForm(request, response) {
+  console.log('Rendering Doctor Result Page...');
+  fs.readFile('DoctorResult.html', 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    response.writeHead(200);
+    response.end(data);
+    console.log('[Done] Rendering Doctor Result Page...');
+  });
+}
+
+var www = http.createServer(handleRequest);
+www.listen(8080);
